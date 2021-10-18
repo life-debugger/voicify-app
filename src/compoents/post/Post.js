@@ -9,8 +9,11 @@ import AudioSpectrum from "react-audio-spectrum";
 import test_audio from "../../audio/youre-a-wizard.mp3";
 import {useRef, useState} from "react";
 
-function Post() {
-	const audioElement = useRef(new Audio(test_audio));
+function Post(props) {
+	const audioElement = useRef(new Audio(props.voiceURL));
+	console.log("Post", props.voiceURL)
+	audioElement.current.crossOrigin = "anonymous"
+	audioElement.current.controlsList = "nodownload"
 	const [isPlaying, setIsPlaying] = useState(false)
 	audioElement.current.onended = () => {
 		setIsPlaying(false)
@@ -23,19 +26,19 @@ function Post() {
 				<div className='profile_info'>
 					<img className='avatar' src={hagridAvatar} alt={'avatar'}/>
 				</div>
-				<div className='title'>I'm a what?!</div>
+				<div className='title'>{props.title}</div>
 			</div>
 			<div className='body'>
 
 				<AudioSpectrum
 					id="audio-canvas"
-					height={100}
+					height={200}
 					width={500}
 					audioEle={audioElement.current}
 					capColor={'#003c41'}
 					capHeight={0}
 					meterWidth={50}
-					meterCount={20}
+					meterCount={10}
 					meterColor={[
 						{stop: 0, color: '#007F8A'},
 						{stop: 1, color: '#007F8A'},
@@ -58,6 +61,7 @@ function Post() {
 					:
 					<img className='icon pointer' src={play_icon} alt={'play'}
 					     onClick={() => {
+						     audioElement.current.load()
 						     audioElement.current.play()
 						     setIsPlaying(true)
 					     }}
