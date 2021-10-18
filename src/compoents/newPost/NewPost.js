@@ -113,18 +113,20 @@ function NewPost() {
 					     onClick={() => {
 						     // audioElement.current.pause()
 						     setIsPlaying(false)
+						     document.getElementById("player").pause()
 					     }}
 					/>
 					:
 					<img className='icon pointer' src={play_icon} alt={'play'}
 					     onClick={() => {
 						     console.log(recordedFile)
+						     document.getElementById("player").play()
 						     // audioElement.current.play().then(() =>{console.log("hey")}, (e)=>{console.log(e)})
 						     setIsPlaying(true)
 					     }}
 					/>
 				}
-				<img className='icon' src={upload_icon} alt={'upload'}
+				<img className='icon pointer' src={upload_icon} alt={'upload'}
 				     onClick={() => {
 					     axios.post('http://127.0.0.1:8000/api/upload_post', getFileReadyToUpload(recordedFile), {
 						     headers: {
