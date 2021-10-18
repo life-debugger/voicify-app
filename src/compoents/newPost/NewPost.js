@@ -76,18 +76,18 @@ function NewPost() {
 
 				<AudioSpectrum
 					id="audio-canvas"
-					height={150}
-					width={700}
+					height={100}
+					width={500}
 					audioId={'player'}
-					// audioEle={audioElement.current}
-					capColor={'red'}
-					capHeight={2}
-					meterWidth={10}
-					meterCount={512}
+					capColor={'#003c41'}
+					capHeight={0}
+					meterWidth={50}
+					meterCount={20}
 					meterColor={[
-						{stop: 0, color: '#ffdd00'},
-						{stop: 0.5, color: '#6efdcb'},
-						{stop: 1, color: '#ff0000'}
+						{stop: 0, color: '#007F8A'},
+						{stop: 1, color: '#007F8A'},
+						// {stop: 0.5, color: '#d46efd'},
+						// {stop: 1, color: '#ff0000'}
 					]}
 					gap={40}
 				/>

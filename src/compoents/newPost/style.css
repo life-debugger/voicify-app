@@ -37,6 +37,7 @@
 .body {
 	display: flex;
 	height: 150px;
+	justify-content: center;
 	background: #98C7CB;
 }
 
@@ -54,13 +55,13 @@
 	height: 40px;
 }
 
-#player{
+#player {
 	display: flex;
 	width: 100px;
 	height: 100px;
 }
 
-.recorder{
+.recorder {
 	/*background-color: red;*/
 	display: none;
 }

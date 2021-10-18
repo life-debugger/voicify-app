@@ -36,6 +36,7 @@
 
 .body {
 	display: flex;
+	justify-content: center;
 	height: 150px;
 	background: #98C7CB;
 }
