@@ -1,0 +1,66 @@
+
+.new-post {
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+	/*height: 400px;*/
+	background: #555;
+	border-radius: 50px;
+	overflow: hidden;
+}
+
+.top {
+	display: flex;
+	height: 110px;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row;
+	background-color: #BBCB98;
+}
+
+.profile_info {
+	display: flex;
+
+}
+
+.avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+}
+
+.title {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.body {
+	display: flex;
+	height: 150px;
+	background: #98C7CB;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	height: 60px;
+	background: #CBBD98;
+}
+
+.icon {
+	width: 40px;
+	height: 40px;
+}
+
+#player{
+	display: flex;
+	width: 100px;
+	height: 100px;
+}
+
+.recorder{
+	/*background-color: red;*/
+	display: none;
+}
