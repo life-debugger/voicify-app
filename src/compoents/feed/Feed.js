@@ -32,7 +32,6 @@ function Feed() {
 
 				)
 			})}
-			<NewPost/>
 		</div>
 	);
 }
