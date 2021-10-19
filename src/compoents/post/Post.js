@@ -5,18 +5,13 @@ import fav_icon from '../../images/heart_icon.png'
 import play_icon from '../../images/play_icon.png'
 import pause_icon from '../../images/pause_icon.png'
 import AudioSpectrum from "react-audio-spectrum";
-import {useRef, useState} from "react";
+import {useState} from "react";
+import test_audio from "../../audio/youre-a-wizard.mp3";
 
 function Post(props) {
-	const audioElement = useRef(new Audio(props.voiceURL));
-	console.log("Post", props.voiceURL)
-	audioElement.current.crossOrigin = "anonymous"
-	audioElement.current.controlsList = "nodownload"
+	const playerId = "" + props.postID + "test"
 	const [isPlaying, setIsPlaying] = useState(false)
-	audioElement.current.onended = () => {
-		setIsPlaying(false)
-	}
-
+    console.log("ID:", playerId)
 	return (
 		<div className="post">
 
@@ -26,13 +21,21 @@ function Post(props) {
 				</div>
 				<div className='title'>{props.title}</div>
 			</div>
+			<audio
+				id={playerId}
+				// src={props.voiceURL}
+				src={test_audio}
+				crossOrigin={'anonymous'}
+				controlsList={'nodownload'}
+				/>
+
 			<div className='body'>
 
 				<AudioSpectrum
 					id="audio-canvas"
 					height={200}
 					width={450}
-					audioEle={audioElement.current}
+					audioId={playerId}
 					capColor={'#007F8A'}
 					capHeight={5}
 					meterWidth={40}
@@ -40,7 +43,7 @@ function Post(props) {
 					meterColor={[
 						{stop: 0, color: '#007F8A'},
 						{stop: 0.55, color: '#00555e'},
-						{start:.6, stop: .7, color: 'purple'},
+						{start: .6, stop: .7, color: 'purple'},
 					]}
 					gap={40}
 				/>
@@ -51,15 +54,23 @@ function Post(props) {
 				{isPlaying ?
 					<img className='icon pointer' src={pause_icon} alt={'pause'}
 					     onClick={() => {
-						     audioElement.current.pause()
+						     // audioElement.current.pause()
+						     document.getElementById(playerId).pause()
+
 						     setIsPlaying(false)
 					     }}
 					/>
 					:
 					<img className='icon pointer' src={play_icon} alt={'play'}
 					     onClick={() => {
-						     audioElement.current.load()
-						     audioElement.current.play()
+						     document.getElementById(playerId).onended = () => {
+							     setIsPlaying(false)
+						     }
+						     console.log(props.voiceURL)
+						     document.getElementById(playerId).load()
+						     document.getElementById(playerId).play()
+						     // audioElement.current.load()
+						     // audioElement.current.play()
 						     setIsPlaying(true)
 					     }}
 					/>

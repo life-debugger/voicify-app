@@ -1,8 +1,7 @@
 import './style.css'
-import profilePicture from '../../images/profile-image.jpg'
+
 import hagridAvatar from '../../images/hagrid-avatar.jpg'
-import share_icon from '../../images/share_icon.png'
-import fav_icon from '../../images/heart_icon.png'
+
 import play_icon from '../../images/play_icon.png'
 import pause_icon from '../../images/pause_icon.png'
 import record_icon from '../../images/record.png'
