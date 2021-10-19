@@ -1,12 +1,10 @@
 import './style.css'
-import profilePicture from '../../images/profile-image.jpg'
 import hagridAvatar from '../../images/hagrid-avatar.jpg'
 import share_icon from '../../images/share_icon.png'
 import fav_icon from '../../images/heart_icon.png'
 import play_icon from '../../images/play_icon.png'
 import pause_icon from '../../images/pause_icon.png'
 import AudioSpectrum from "react-audio-spectrum";
-import test_audio from "../../audio/youre-a-wizard.mp3";
 import {useRef, useState} from "react";
 
 function Post(props) {
@@ -33,24 +31,23 @@ function Post(props) {
 				<AudioSpectrum
 					id="audio-canvas"
 					height={200}
-					width={500}
+					width={450}
 					audioEle={audioElement.current}
-					capColor={'#003c41'}
-					capHeight={0}
-					meterWidth={50}
-					meterCount={10}
+					capColor={'#007F8A'}
+					capHeight={5}
+					meterWidth={40}
+					meterCount={512}
 					meterColor={[
 						{stop: 0, color: '#007F8A'},
-						{stop: 1, color: '#007F8A'},
-						// {stop: 0.5, color: '#d46efd'},
-						// {stop: 1, color: '#ff0000'}
+						{stop: 0.55, color: '#00555e'},
+						{start:.6, stop: .7, color: 'purple'},
 					]}
 					gap={40}
 				/>
 
 			</div>
 			<div className='footer'>
-			<img className='icon' src={fav_icon} alt={'fav'}/>
+				<img className='icon' src={fav_icon} alt={'fav'}/>
 				{isPlaying ?
 					<img className='icon pointer' src={pause_icon} alt={'pause'}
 					     onClick={() => {

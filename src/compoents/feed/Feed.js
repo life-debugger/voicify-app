@@ -1,10 +1,9 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import Post from "../post/Post";
 import NewPost from "../newPost/NewPost";
 
 function Feed() {
-	// const [voiceURL, setVoiceURL] = useState(null)
 	const [posts, setPosts] = useState([])
 
 	useEffect(() => {
@@ -12,11 +11,6 @@ function Feed() {
 			.then(function (response) {
 				console.log(response.data.posts);
 				setPosts(response.data.posts)
-				// setPost({
-				// 	title:response.data.title,
-				// 	voice:response.data.voice,
-				// })
-				// setVoiceURL(response.data.voice)
 			})
 			.catch(function (error) {
 				console.log("ERROR!", error);
@@ -24,9 +18,7 @@ function Feed() {
 
 
 	}, [])
-	// if (!post.title){
-	// 	return <p>Loading...</p>
-	// }
+
 	return (
 		<div className="feed">
 			{posts.map((post) => {
@@ -40,10 +32,7 @@ function Feed() {
 
 				)
 			})}
-
-			<NewPost
-
-			/>
+			<NewPost/>
 		</div>
 	);
 }

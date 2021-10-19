@@ -37,15 +37,15 @@ function NewPost() {
 	const onStop = (audioData) => {
 
 		setRecordedFile(audioData)
-		// document.getElementById("player").load()
 		console.log('audioData', audioData)
-		// audioElement.current.load()
+		document.getElementById('player').onended = ()=>{
+			setIsPlaying(false)
+		}
 		document.getElementById('player').play().then((e) => {
 			console.log(e)
 		}, (e) => {
 			console.log(e)
 		})
-
 	}
 
 	const getFileReadyToUpload = (bl) => {
@@ -56,7 +56,6 @@ function NewPost() {
 	}
 	return (
 		<div className="new-post">
-
 			<div className='top'>
 				<div className='profile_info'>
 					<img className='avatar' src={hagridAvatar} alt={'avatar'}/>
@@ -76,18 +75,17 @@ function NewPost() {
 
 				<AudioSpectrum
 					id="audio-canvas"
-					height={100}
-					width={500}
+					height={200}
+					width={450}
 					audioId={'player'}
-					capColor={'#003c41'}
-					capHeight={0}
-					meterWidth={50}
-					meterCount={20}
+					capColor={'#007F8A'}
+					capHeight={5}
+					meterWidth={40}
+					meterCount={512}
 					meterColor={[
 						{stop: 0, color: '#007F8A'},
-						{stop: 1, color: '#007F8A'},
-						// {stop: 0.5, color: '#d46efd'},
-						// {stop: 1, color: '#ff0000'}
+						{stop: 0.55, color: '#00555e'},
+						{start:.6, stop: .7, color: 'purple'},
 					]}
 					gap={40}
 				/>
