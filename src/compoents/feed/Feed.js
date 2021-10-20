@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Post from "../post/Post";
-import NewPost from "../newPost/NewPost";
+import VoicePost from "../voice_post/VoicePost";
 
 function Feed() {
 	const [posts, setPosts] = useState([])
@@ -23,15 +23,16 @@ function Feed() {
 		<div className="feed">
 			{posts.map((post) => {
 				return (
-					<Post
-						key={post.postID}
+					<VoicePost
 						title={post.title}
+						key={post.postID}
 						voiceURL={post.voice}
-						postID={post.postID}
 					/>
-
 				)
-			})}
+			})
+
+			}
+			<VoicePost/>
 		</div>
 	);
 }

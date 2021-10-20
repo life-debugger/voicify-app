@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+.voice_post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 50px;
+	margin: 10px;
+	background: #37A7B0;
+	width: 50vw;
+	/*height: 45vh;*/
+	padding: 20px;
+	/*box-sizing: content-box;*/
+}
+
+.post_header {
+	display: flex;
+	width: 80%;
+	margin-bottom: 10px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.post_header .post-owner {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.post_header .avatar {
+	width: 60px;
+	height: 60px;
+}
+
+.post_header .name {
+	font-family: 'Ropa Sans', sans-serif;
+	font-size: 1.2em;
+}
+
+.post_header .username {
+	font-family: 'Rubik', sans-serif;
+	opacity: .5;
+}
+
+.post_header .user-info {
+	margin: 10px;
+	color: white;
+}
+
+.post_body {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #A0DEE3;
+	width: 100%;
+	height: 40vh;
+	border-radius: 50px;
+}
+
+.icon_group {
+	display: flex;
+	flex-direction: row;
+}
+
+.icon_group .icon {
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+}
+
+.controller_group {
+	text-align: center;
+	position: relative;
+	bottom: 5vh;
+	width: 30vw;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.controller_icon {
+	width: 130px;
+}
+
+.timer {
+	font-family: 'Ropa Sans', sans-serif;
+	margin: 0 30px;
+}
+
+.post_title {
+	position: absolute;
+	bottom: 0;
+	background: #96CED2;
+	border-radius: 50px;
+	box-sizing: border-box;
+	padding: 10px 40px;
+	font-family: 'Ropa Sans', sans-serif;
+	font-weight: bold;
+	margin: 20px;
+	width: 50%;
+	font-size: 1.6em;
+	text-align: center;
+}
+
+
