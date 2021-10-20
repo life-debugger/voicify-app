@@ -24,7 +24,7 @@ function Post(props) {
 			<audio
 				id={playerId}
 				// src={props.voiceURL}
-				src={test_audio}
+				src={props.voiceURL}
 				crossOrigin={'anonymous'}
 				controlsList={'nodownload'}
 				/>

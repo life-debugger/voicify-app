@@ -1,37 +1,26 @@
 import './style.css'
 
 import hagridAvatar from '../../images/hagrid-avatar.jpg'
-
 import play_icon from '../../images/play_icon.png'
 import pause_icon from '../../images/pause_icon.png'
 import record_icon from '../../images/record.png'
 import open_mic from '../../images/open-mic_icon.png'
 import upload_icon from '../../images/upload.png'
 import AudioSpectrum from "react-audio-spectrum";
-import test_audio from "../../audio/youre-a-wizard.mp3";
 
 
-import {useRef, useState} from "react";
+import {useState} from "react";
 import AudioReactRecorder, {RecordState} from "audio-react-recorder";
 import axios from "axios";
 
 function NewPost() {
 	const [recordedFile, setRecordedFile] = useState("")
-	// const audioElement = useRef(new Audio(recordedFile));
 	const [isPlaying, setIsPlaying] = useState(false)
-	// audioElement.current.onended = () => {
-	// 	setIsPlaying(false)
-	// }
+
 
 
 	const [recordState, setRecordState] = useState(null)
 
-	const start = () => {
-		setRecordState(RecordState.START)
-	}
-	const stop = () => {
-		setRecordState(RecordState.STOP)
-	}
 
 	const onStop = (audioData) => {
 
