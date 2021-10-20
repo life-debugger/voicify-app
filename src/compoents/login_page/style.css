@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo');
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans');
+
+.login_page {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background: #E3FDFF;
+	width: 100vw;
+	height: 100vh;
+}
+
+
+.title {
+	/*background: #000;*/
+	font-family: 'Rosarivo', serif;
+	font-size: 3em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.description {
+	font-family: 'Ropa Sans', sans-serif;
+	/*font-weight: bold;*/
+	font-style: italic;
+	letter-spacing: 10px;
+}
+
+.login_container {
+	margin: 20px;
+	/*width: 50vw;*/
+	height: 20vw;
+	/*border: black solid 2px;*/
+	border-radius: 30px;
+	display: flex;
+	flex-direction: row-reverse;
+	overflow: hidden;
+}
+
+.login_form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 27vw;
+	height: 100%;
+	flex-direction: column;
+	background: #259FD3;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.login_form .input_group {
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+}
+
+.login_form .input_group input {
+	margin: 10px 0;
+	outline: none;
+	border: none;
+	background: #A4CEE0;
+	height: 3vw;
+	text-align: center;
+	font-family: 'Ropa Sans', sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+
+.login_form input::placeholder {
+	color: rgba(0, 0, 0, 0.29);
+}
+
+.login_form .login_btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #D0A4E0;
+	font-family: 'Ropa Sans', sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 8vw;
+	height: 2.2vw;
+	padding: 5px 0;
+	margin-bottom: 10px;
+	transition: all 300ms ease;
+}
+
+
+.login_form .login_btn:hover{
+	background: #c274de;
+	width: 12vw;
+
+
+}
+
+.poster_container {
+	height: 100%;
+	width: 20vw;
+	display: flex;
+	flex-direction: column;
+	background: #2EBDEA;
+}
+
+.poster_container .poster {
+	aspect-ratio: 1;
+	user-drag: none;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+
+}
+
+.login_title {
+	font-family: 'Ropa Sans', sans-serif;
+	font-size: 2.7em;
+	color: #fff;
+	font-weight: lighter;
+}
+
+
+
+
+
+
