@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo&display=swap');
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	background: #A6DFFF;
+	height: 80px;
+	width: 100%;
+}
+
+.header .brand{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100%;
+}
+
+.header .brand_title {
+	font-family: 'Rosarivo', serif;
+	font-size: 25px;
+	color: #144368;
+	margin: 0 10px;
+}
+/*.bg-gray{*/
+/*	background-color: #0003;*/
+/*	padding: 10px;*/
+/*}*/
+.header .logo {
+	height: 60px;
+	width: 60px;
+
+	margin: 0 10px;
+}
+
+.header .user_info{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+
+}
+
+.header .user_info .name{
+	font-family: 'Ropa Sans', sans-serif;
+	font-size: 1.5em;
+	margin: 0 10px;
+}
+
+.header  .user_info .user_avatar {
+	height:75%;
+	border-radius: 100px;
+	margin: 0 20px;
+}
