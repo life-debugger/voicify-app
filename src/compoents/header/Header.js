@@ -1,18 +1,36 @@
 import './style.css'
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import logo from "../../images/logo.png"
 import user_avatar from "../../images/hagrid-avatar.jpg"
+import {useEffect, useState} from "react";
+import {get_user_info} from "../../api";
 
 function Header(props) {
+	const username = sessionStorage.getItem('username')
+	const [user, setUser] = useState({})
+	const history = useHistory();
+	useEffect(() => {
+		get_user_info(
+			username,
+			(u) => {
+				setUser(u)
+				console.log(u)
+			},
+			() => {
+				history.push('login')
+			}
+		)
+	}, [])
+
 	return (
 		<div className='header'>
 			<div className='brand'>
 				<Link to="/feed">
-				<img
-					src={logo}
-					className='logo pointer'
-					alt='logo'
-				/>
+					<img
+						src={logo}
+						className='logo pointer'
+						alt='logo'
+					/>
 				</Link>
 				<Link to="/feed">
 					<div className='brand_title pointer'>
@@ -21,14 +39,16 @@ function Header(props) {
 				</Link>
 			</div>
 			<div className='user_info'>
+
 				<img
 					alt='user-avatar'
 					className='user_avatar'
 					src={user_avatar}
 				/>
 				<div className='name'>
-					robbie hagrid
+					{user.name}
 				</div>
+
 			</div>
 
 		</div>
