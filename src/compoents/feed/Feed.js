@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import Post from "../post/Post";
 import VoicePost from "../voice_post/VoicePost";
+import CreateBtn from "../create_btn/CreateBtn";
 
 function Feed() {
 	const [posts, setPosts] = useState([])
@@ -9,8 +9,7 @@ function Feed() {
 	useEffect(() => {
 		axios.get('http://127.0.0.1:8000/api/last_five_posts')
 			.then(function (response) {
-				console.log(response.data.posts);
-				setPosts(response.data.posts)
+				setPosts(response.data["posts"])
 			})
 			.catch(function (error) {
 				console.log("ERROR!", error);
@@ -32,7 +31,7 @@ function Feed() {
 			})
 
 			}
-			<VoicePost/>
+		<CreateBtn />
 		</div>
 	);
 }

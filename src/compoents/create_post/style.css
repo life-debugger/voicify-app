@@ -9,7 +9,7 @@
 	background: #37A7B0;
 	width: 50vw;
 	/*height: 45vh;*/
-	padding: 20px;
+	padding: 10px 20px 20px 20px;
 	/*box-sizing: content-box;*/
 }
 
@@ -90,6 +90,9 @@
 .timer {
 	font-family: 'Ropa Sans', sans-serif;
 	margin: 0 30px;
+	background-color: #2EBDEA55;
+	max-lines: 1;
+	min-width: 50px;
 }
 
 .post_title {
@@ -107,8 +110,36 @@
 	text-align: center;
 }
 
-.avatar{
-	border-radius: 100px;
+.voice_post textarea{
+	outline: none;
+	border: none;
+	resize: none;
+	overflow: hidden;
+	max-lines: 2;
+}
+.voice_post textarea::placeholder{
+	font-weight: lighter;
 }
 
+.upload_btn{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 
+	height: 20px;
+	padding: 7px 20px;
+	/*width: 50px;*/
+	border-radius: 50px;
+	border: solid 2px #48735C;
+	background: #A0E3BF;
+}
+.upload_btn .icon{
+	width: 30px;
+	height:30px;
+}
+
+.upload_text{
+	font-family: 'Ropa Sans', sans-serif;
+	font-size: 20px;
+	margin: 0 10px;
+}
