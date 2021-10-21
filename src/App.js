@@ -6,8 +6,9 @@ import {
 	Switch,
 	Route, Redirect,
 } from "react-router-dom";
-import NewPost from "./compoents/newPost/NewPost";
 import LoginForm from "./compoents/login_page/LoginPage";
+import CreatePost from "./compoents/create_post/CreatePost";
+import Header from "./compoents/header/Header";
 
 
 function App() {
@@ -29,11 +30,12 @@ function App() {
 
 	return (
 		<Router>
+			<Header />
 			<div className="App">
 				<Switch>
-					<Route path="/new-post">
-						<NewPost/>
-						<NewPost/>
+					<Route path="/create-post">
+						{/*<NewPost/>*/}
+						<CreatePost />
 					</Route>
 					<Route path="/feed">
 						<Feed/>
