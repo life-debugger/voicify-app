@@ -17,16 +17,27 @@ export const login_validator = (username, password, success_func, fail_func) => 
 		.catch(function (response) {
 			fail_func()
 		});
+}
 
 
-	// axios.post(URL_ROOT + "login", {
-	// 	username: username,
-	// 	password: password
-	// })
-	// 	.then(function (response) {
-	// 		console.log(response);
-	// 	})
-	// 	.catch(function (error) {
-	// 		console.log(error);
-	// 	});
+export const upload_new_post = (title, voice, success_func, fail_func) => {
+    let data = new FormData()
+	let file = new File([voice.blob], 'recorded.mp3')
+	data.append("title", title);
+	data.append("voice", file);
+
+	axios.post(URL_ROOT + 'upload_post', data, {
+			headers: {
+				'Content-Type': 'multipart/form-data'
+			}
+		}).then(function (response) {
+			if (response.data['status'] === "success") {
+				success_func(response.data['msg'])
+			}else{
+				fail_func(response.data['msg'])
+			}
+		})
+		.catch(function (response) {
+			fail_func()
+		});
 }
