@@ -1,6 +1,5 @@
 import './style.css'
 import avatar_pic from "../../images/hagrid-avatar.jpg"
-import test_audio from "../../audio/youre-a-wizard.mp3";
 import like_icon from "../../images/heart.png"
 import share_icon from "../../images/share_icon.png"
 import play_icon from "../../images/play_icon.png"
@@ -16,8 +15,6 @@ function VoicePost(props) {
 
 	useEffect(()=>{
 		audioElement.current.load()
-		console.log("DEBUG", audioElement.current.duration)
-		console.log("DEBUG", audioElement.current.duration)
 		setDuration(audioElement.current.duration)
 	}, [])
 

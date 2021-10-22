@@ -4,11 +4,9 @@ import upload_icon from "../../images/upload.png"
 import stop_icon from "../../images/stop_icon.png"
 import replay_icon from "../../images/replay.png"
 import record_icon from "../../images/record_icon.png"
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import AudioReactRecorder, {RecordState} from "audio-react-recorder";
-import axios from "axios";
 import {toast, ToastContainer} from "react-toastify";
-import {useHistory} from "react-router-dom";
 import {upload_new_post} from "../../api";
 
 function CreatePost(props) {
@@ -16,9 +14,9 @@ function CreatePost(props) {
 	const [duration, setDuration] = useState(0)
 	const [recordState, setRecordState] = useState(null)
 	const [recordedFile, setRecordedFile] = useState("test-test")
-	const audioElement = new Audio(recordedFile)
-	let history = useHistory();
-
+	const audioElement = useMemo(() => (
+		new Audio(recordedFile)
+	), [recordedFile])
 	useEffect(() => {
 		audioElement.src = recordedFile.url
 	}, [audioElement, recordedFile])
@@ -39,12 +37,6 @@ function CreatePost(props) {
 		} else {
 			setRecordState(RecordState.START)
 		}
-	}
-	const getFileReadyToUpload = (bl) => {
-		let formData = new FormData();
-		let file = new File([bl.blob], 'recorded.mp3')
-		formData.append("voice", file);
-		return formData
 	}
 
 	const upload = () => {

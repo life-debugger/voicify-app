@@ -20,7 +20,7 @@ function Header(props) {
 				history.push('login')
 			}
 		)
-	}, [])
+	}, [username, history])
 
 	return (
 		<div className='header'>
