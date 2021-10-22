@@ -23,6 +23,7 @@ export const login_validator = (username, password, success_func, fail_func) => 
 export const upload_new_post = (title, voice, success_func, fail_func) => {
 	let data = new FormData()
 	let file = new File([voice.blob], 'recorded.mp3')
+	data.append("username", 'amin');
 	data.append("title", title);
 	data.append("voice", file);
 
