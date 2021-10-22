@@ -14,7 +14,9 @@ function CreatePost(props) {
 	const [duration, setDuration] = useState(0)
 	const [recordState, setRecordState] = useState(null)
 	const [recordedFile, setRecordedFile] = useState("test-test")
+	const [title, setTitle] = useState("")
 	const audioElement = useMemo(() => (
+
 		new Audio(recordedFile)
 	), [recordedFile])
 	useEffect(() => {
@@ -40,7 +42,7 @@ function CreatePost(props) {
 	}
 
 	const upload = () => {
-		upload_new_post('new title', recordedFile, success_upload, fail_upload)
+		upload_new_post(title, recordedFile, success_upload, fail_upload)
 	}
 
 	const handleReplayBtn = () => {
@@ -65,6 +67,9 @@ function CreatePost(props) {
 		audioElement.load()
 	}
 
+	const handleTitleInput = (e) => {
+		setTitle(e.target.value)
+	}
 
 	return (
 		<div className='voice_post'>
@@ -137,7 +142,11 @@ function CreatePost(props) {
 						alt='play_icon'
 					/>
 				</div>
-				<textarea className='post_title' placeholder='Add a title...'>
+				<textarea
+					className='post_title'
+					onChange={handleTitleInput}
+					placeholder='Add a title...'
+				>
 
 				</textarea>
 			</div>

@@ -14,7 +14,6 @@ function Header(props) {
 			username,
 			(u) => {
 				setUser(u)
-				console.log(u)
 			},
 			() => {
 				history.push('login')

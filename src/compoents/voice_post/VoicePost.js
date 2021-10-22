@@ -94,7 +94,7 @@ function VoicePost(props) {
 					/>
 				</div>
 				<div className='post_title'>
-					and then He said I'm a what?! I'll never forget it .
+					{props.title}
 				</div>
 			</div>
 		</div>
