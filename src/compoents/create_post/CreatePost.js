@@ -47,6 +47,7 @@ function CreatePost(props) {
 
 	const handleReplayBtn = () => {
 		setDuration(Math.floor(audioElement.duration))
+		audioElement.load()
 		audioElement.play().then((e) => {
 		}, (e) => {
 			console.warn(e)
