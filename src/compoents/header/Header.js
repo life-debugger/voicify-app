@@ -37,18 +37,21 @@ function Header(props) {
 					</div>
 				</Link>
 			</div>
-			<div className='user_info'>
+			<Link to={'/profile'}>
 
-				<img
-					alt='user-avatar'
-					className='user_avatar'
-					src={user_avatar}
-				/>
-				<div className='name'>
-					{user.name}
+				<div className='user_info'>
+
+					<img
+						alt='user-avatar'
+						className='user_avatar'
+						src={user_avatar}
+					/>
+					<div className='name'>
+						{user.name}
+					</div>
+
 				</div>
-
-			</div>
+			</Link>
 
 		</div>
 

@@ -9,6 +9,8 @@ import {
 import LoginForm from "./compoents/login_page/LoginPage";
 import CreatePost from "./compoents/create_post/CreatePost";
 import Header from "./compoents/header/Header";
+import ProfilePage from "./compoents/profile_page/ProfilePage";
+import {ToastContainer} from "react-toastify";
 
 
 function App() {
@@ -30,7 +32,19 @@ function App() {
 
 	return (
 		<Router>
+
 			<Header />
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={true}
+				newestOnTop={true}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 			<div className="App">
 				<Switch>
 					<Route path="/create-post">
@@ -42,6 +56,9 @@ function App() {
 					</Route>
 					<Route path="/login">
 						<LoginForm/>
+					</Route>
+					<Route path="/profile">
+						<ProfilePage/>
 					</Route>
 				</Switch>
 

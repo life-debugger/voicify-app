@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rosarivo&display=swap');
 
-.header{
+.header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	background: #A6DFFF;
 	height: 80px;
 	width: 100%;
 }
 
-.header .brand{
+.header .brand {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -21,6 +22,7 @@
 	color: #144368;
 	margin: 0 10px;
 }
+
 /*.bg-gray{*/
 /*	background-color: #0003;*/
 /*	padding: 10px;*/
@@ -32,21 +34,23 @@
 	margin: 0 10px;
 }
 
-.header .user_info{
+.header .user_info {
 	display: flex;
 	flex-direction: row-reverse;
+	justify-content: center;
 	align-items: center;
-
 }
 
-.header .user_info .name{
+.header .user_info .name {
 	font-family: 'Ropa Sans', sans-serif;
 	font-size: 1.5em;
 	margin: 0 10px;
 }
 
-.header  .user_info .user_avatar {
-	height:75%;
+.header .user_info .user_avatar {
+	height: 60px;
+	width: 60px;
+
 	border-radius: 100px;
 	margin: 0 20px;
 }
