@@ -60,3 +60,25 @@ export const get_user_info = (username, success_func, fail_func) => {
 		});
 }
 
+export const update_user = (user, success_func, fail_func) => {
+	let data = new FormData()
+	data.append("username", user.username)
+	data.append("name", user.name)
+	data.append("email", user.email)
+	data.append("avatar", user.avatar, 'avatar.png')
+
+	axios.post(URL_ROOT + "update_user", data)
+		.then(function (response) {
+			if (response.data['status'] === "success") {
+				success_func(response.data['msg'])
+			} else {
+				fail_func()
+			}
+		})
+		.catch(function (response) {
+			fail_func()
+		});
+}
+
+
+
